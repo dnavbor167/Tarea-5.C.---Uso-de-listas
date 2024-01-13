@@ -5,6 +5,7 @@
 package daw;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -144,5 +145,20 @@ public class CatalogoMotos {
     //posición en la que se encuentra. Usa el método indexOf. No usar búsqueda binaria.
     public void buscarElemento(Motos elementoABuscar){
         listaMotos.indexOf(elementoABuscar);
+    }
+    
+    //Incluye un par de métodos de ordenación usando el método 
+    //Collections.sort de dos atributos de tu clase.
+    public void ordenarPorMatricula(){
+        Collections.sort(listaMotos, 
+                (e1,e2)->e1.getMatricula().compareToIgnoreCase(e2.getMatricula()));
+    }
+    public void ordenarPorCv(){
+        Collections.sort(listaMotos, 
+                (e1,e2)->e1.getCv()-e2.getCv());
+    }
+    public void ordenarPorNumeroRuedas(){
+        Collections.sort(listaMotos, 
+                (e1,e2)->Integer.compare(e1.getNumRuedas(), e2.getNumRuedas()));
     }
 }
