@@ -33,12 +33,49 @@ public class CatalogoMotos {
     
     //verElemento(int): devuelve el objeto que se encuentra en la posición indicada.
     public Motos verElemento(int posicion){
-        return listaMotos.get(posicion);
+        try {
+            return listaMotos.get(posicion);
+        } catch (IndexOutOfBoundsException a){
+            System.out.print("No existen elementos o no existe la posición / ");
+            return null;
+        }
+        
     }
     
     //cambiarElemento(int, Objeto nuevo): cambia el objeto de la posición 
     //indicada por objeto nuevo proporcionado como parámetro.
     public void cambiarElemento(int posicion, Motos nuevoObjeto){
-        listaMotos.set(posicion, nuevoObjeto);
+        try {
+            listaMotos.set(posicion, nuevoObjeto);
+        } catch (IndexOutOfBoundsException a){
+            System.out.println("No existe la posicón indicada");
+        }
+        
+    }
+    
+    //guardarElemento(Objeto c): agrega al final de la lista el nuevo elemento
+    public void guardarElemento(Motos motoAGuardar){
+        listaMotos.add(motoAGuardar);
+    }
+    
+    //eliminarElemento(int): elimina el objeto que se encuentra 
+    //en la posición indicada
+    public void eliminarElemento(int posicion){
+        listaMotos.remove(posicion);
+    }
+    
+    public static void main(String[] args) {
+        CatalogoMotos c1 = new CatalogoMotos();
+        System.out.println(c1.numeroElementos());
+        System.out.println(c1.estaVacio());
+        
+        
+        c1.guardarElemento(new Motos("5678 asq", "Yamaha", "Yama", 40, 2));
+        System.out.println(c1);
+        System.out.println(c1.verElemento(1));
+        
+        c1.cambiarElemento(0, new Motos("1234 ahc", "kawasaki", "kawa", 32, 2));
+        
+        
     }
 }
