@@ -29,6 +29,17 @@ public class CatalogoMotos {
         this.listaMotos = listaMotos;
     }
     
+    //Creación de toString
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("CatalogoMotos{");
+        sb.append("listaMotos=").append(listaMotos);
+        sb.append('}');
+        return sb.toString();
+    }
+    
+    
     
     //Creación de Métodos
     
