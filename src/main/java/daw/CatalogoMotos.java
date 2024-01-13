@@ -14,6 +14,101 @@ import java.util.Objects;
  * @author danielnavasborjas
  */
 public class CatalogoMotos {
+    
+    //Métod main para probar catálogo
+    public static void main(String[] args) {
+        //Creamos dos catálogos con el constructor sin parametrizar
+        //(este los crea vacíos)
+        Motos moto1 = new Motos("1234 asd", 
+                "Yamaha", "Yoshi kagamoto", 
+                45, 2);
+        CatalogoMotos catalogo1 = new CatalogoMotos();
+        CatalogoMotos catalogo2 = new CatalogoMotos();
+        
+        //Método 1
+        System.out.println("Método 1");
+        System.out.println("El catálogo 1 tiene " + catalogo1.numeroElementos()
+                + " elementos");
+        System.out.println("El catálogo 2 tiene " + catalogo2.numeroElementos() 
+                + " elementos");
+        
+        //Método 2
+        System.out.println("\nMétodo 2");
+        System.out.println("¿Está vacío el catálogo 1? " + catalogo1.estaVacio());
+        System.out.println("¿Está vacío el catálogo 2? " + catalogo2.estaVacio());
+        
+        //Método 3
+        System.out.println("\nMétodo 3");
+        catalogo1.guardarElemento(moto1);
+        catalogo1.guardarElemento(new Motos("2332 sfg", 
+                "Honda", "Yango pato", 
+                23, 1));
+        catalogo1.guardarElemento(moto1);
+        catalogo2.guardarElemento(new Motos("3456", 
+                "paxi", "Pepito trillo", 
+                12, 3));
+        catalogo2.guardarElemento(new Motos("9568 jkd", 
+                "pechi", "coca cola", 
+                5, 2));
+        
+        //Método 4
+        System.out.println("\nMétodo 4");
+        System.out.println(catalogo1.verElemento(0));
+        System.out.println(catalogo1.verElemento(1));
+        System.out.println(catalogo2.verElemento(0));
+        System.out.println(catalogo2.verElemento(1));
+        
+        //Método 5
+        System.out.println("\nMétodo 5");
+        catalogo1.cambiarElemento(0, new Motos());
+        System.out.println(catalogo1.verElemento(0));
+        
+        //Método 6
+        System.out.println("\nMétodo 6");
+        catalogo1.eliminarElemento(0);
+        System.out.println(catalogo1.verElemento(0));
+        
+        //Método 7
+        System.out.println("\nMétodo 7");
+        catalogo2.eliminaElemento(moto1);
+        catalogo2.imprimitCatalogo();
+ 
+        //Método 8
+        System.out.println("\nMétodo 8");
+        ArrayList<Motos> motoLista = new ArrayList<>();
+        motoLista.add(new Motos("3456", 
+                "paxi", "Pepito trillo", 
+                12, 3));
+        motoLista.add(new Motos("2345 jfj", "chacho", 
+                "Enrique iglesia", 3, 2));
+        catalogo2.eliminarElemento(motoLista);
+        catalogo2.imprimitCatalogo();
+        
+        //Método 9
+        System.out.println("\nMétodo 9");
+        catalogo2.eliminarTodos();
+        System.out.println("¿Lista 2 está vacía? " + catalogo2.estaVacio());
+        
+        //Método 10
+        System.out.println("\nMétodo 10");
+        catalogo1.imprimitCatalogo();
+        
+        //Método 11
+        System.out.println("\nMétodo 11");
+        System.out.println("La moto 1 se encuentra en " + 
+                catalogo1.buscarElementoIndexOf(moto1));
+        
+        //Método 12
+        System.out.println("\nMétodo 12");
+        catalogo1.ordenarPorMatricula();
+        catalogo1.imprimitCatalogo();
+        
+        //Método 13
+        System.out.println("\nMétodo 13");
+        System.out.println("El objeto moto1 está en la posición " + 
+                catalogo1.buscarElementoBinarySearch(moto1));
+        
+    }
 
     //Creación de atributos encapsulados
     private ArrayList<Motos> listaMotos;
@@ -143,8 +238,8 @@ public class CatalogoMotos {
     
     //buscarElemento(Objeto c), busca el objeto c en la lista  y devuelve la 
     //posición en la que se encuentra. Usa el método indexOf. No usar búsqueda binaria.
-    public void buscarElementoIndexOf(Motos elementoABuscar){
-        listaMotos.indexOf(elementoABuscar);
+    public int buscarElementoIndexOf(Motos elementoABuscar){
+        return listaMotos.indexOf(elementoABuscar);
     }
     
     //Incluye un par de métodos de ordenación usando el método 
