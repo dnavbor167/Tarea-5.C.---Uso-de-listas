@@ -35,4 +35,10 @@ public class CatalogoMotos {
     public Motos verElemento(int posicion){
         return listaMotos.get(posicion);
     }
+    
+    //cambiarElemento(int, Objeto nuevo): cambia el objeto de la posición 
+    //indicada por objeto nuevo proporcionado como parámetro.
+    public void cambiarElemento(int posicion, Motos nuevoObjeto){
+        listaMotos.set(posicion, nuevoObjeto);
+    }
 }
