@@ -106,4 +106,9 @@ public class CatalogoMotos {
     public void eliminarElemento(int posicion) {
         listaMotos.remove(posicion);
     }
+    
+    //eliminaElemento(Objeto c), elimina el objeto c si se encuentra en la lista
+    public void eliminaElemento(Motos objetoAEliminar){
+        listaMotos.remove(objetoAEliminar);
+    }
 }
