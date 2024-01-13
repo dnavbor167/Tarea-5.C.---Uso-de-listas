@@ -14,4 +14,8 @@ public class CatalogoMotos {
     //Creación de atributos encapsulados
     private ArrayList<Motos> listaMotos;
     
+    //Creación de constructor predeterminado (Este crea la lista sin parámetros)
+    public CatalogoMotos(){
+        this.listaMotos = new ArrayList<>();
+    }
 }
