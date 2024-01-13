@@ -4,10 +4,14 @@
  */
 package daw;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author danielnavasborjas
  */
 public class CatalogoMotos {
+    //Creación de atributos encapsulados
+    private ArrayList<Motos> listaMotos;
     
 }
