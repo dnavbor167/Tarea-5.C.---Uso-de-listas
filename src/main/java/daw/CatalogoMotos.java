@@ -25,4 +25,9 @@ public class CatalogoMotos {
     public int numeroElementos(){
         return listaMotos.size();
     }
+    
+    //estaVacio(): devuelve si el catálogo está vacío.
+    public boolean estaVacio(){
+        return listaMotos.isEmpty();
+    }
 }
