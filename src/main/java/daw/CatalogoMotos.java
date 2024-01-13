@@ -19,6 +19,17 @@ public class CatalogoMotos {
         this.listaMotos = new ArrayList<>();
     }
     
+    //Creación de getters y setters
+
+    public ArrayList<Motos> getListaMotos() {
+        return listaMotos;
+    }
+
+    public void setListaMotos(ArrayList<Motos> listaMotos) {
+        this.listaMotos = listaMotos;
+    }
+    
+    
     //Creación de Métodos
     
     //numeroElementos(): devuelve el número de objetos que hay en la lista.
@@ -50,32 +61,7 @@ public class CatalogoMotos {
         } catch (IndexOutOfBoundsException a){
             System.out.println("No existe la posicón indicada");
         }
-        
     }
     
-    //guardarElemento(Objeto c): agrega al final de la lista el nuevo elemento
-    public void guardarElemento(Motos motoAGuardar){
-        listaMotos.add(motoAGuardar);
-    }
     
-    //eliminarElemento(int): elimina el objeto que se encuentra 
-    //en la posición indicada
-    public void eliminarElemento(int posicion){
-        listaMotos.remove(posicion);
-    }
-    
-    public static void main(String[] args) {
-        CatalogoMotos c1 = new CatalogoMotos();
-        System.out.println(c1.numeroElementos());
-        System.out.println(c1.estaVacio());
-        
-        
-        c1.guardarElemento(new Motos("5678 asq", "Yamaha", "Yama", 40, 2));
-        System.out.println(c1);
-        System.out.println(c1.verElemento(1));
-        
-        c1.cambiarElemento(0, new Motos("1234 ahc", "kawasaki", "kawa", 32, 2));
-        
-        
-    }
 }
