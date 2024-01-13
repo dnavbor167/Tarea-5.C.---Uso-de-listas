@@ -100,4 +100,10 @@ public class CatalogoMotos {
     public void guardarElemento(Motos motoAGuardar) {
         listaMotos.add(motoAGuardar);
     }
+
+    //eliminarElemento(int): elimina el objeto que se encuentra 
+    //en la posición indicada
+    public void eliminarElemento(int posicion) {
+        listaMotos.remove(posicion);
+    }
 }
