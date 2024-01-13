@@ -12,16 +12,16 @@ import java.util.Objects;
  * @author danielnavasborjas
  */
 public class CatalogoMotos {
+
     //Creación de atributos encapsulados
     private ArrayList<Motos> listaMotos;
-    
+
     //Creación de constructor predeterminado (Este crea la lista sin parámetros)
-    public CatalogoMotos(){
+    public CatalogoMotos() {
         this.listaMotos = new ArrayList<>();
     }
-    
-    //Creación de getters y setters
 
+    //Creación de getters y setters
     public ArrayList<Motos> getListaMotos() {
         return listaMotos;
     }
@@ -29,7 +29,7 @@ public class CatalogoMotos {
     public void setListaMotos(ArrayList<Motos> listaMotos) {
         this.listaMotos = listaMotos;
     }
-    
+
     //Creación de toString
     @Override
     public String toString() {
@@ -39,7 +39,7 @@ public class CatalogoMotos {
         sb.append('}');
         return sb.toString();
     }
-    
+
     //Creación de hashcode
     @Override
     public int hashCode() {
@@ -63,42 +63,41 @@ public class CatalogoMotos {
         final CatalogoMotos other = (CatalogoMotos) obj;
         return Objects.equals(this.listaMotos, other.listaMotos);
     }
-    
-    
-    
-    
+
     //Creación de Métodos
-    
     //numeroElementos(): devuelve el número de objetos que hay en la lista.
-    public int numeroElementos(){
+    public int numeroElementos() {
         return listaMotos.size();
     }
-    
+
     //estaVacio(): devuelve si el catálogo está vacío.
-    public boolean estaVacio(){
+    public boolean estaVacio() {
         return listaMotos.isEmpty();
     }
-    
+
     //verElemento(int): devuelve el objeto que se encuentra en la posición indicada.
-    public Motos verElemento(int posicion){
+    public Motos verElemento(int posicion) {
         try {
             return listaMotos.get(posicion);
-        } catch (IndexOutOfBoundsException a){
+        } catch (IndexOutOfBoundsException a) {
             System.out.print("No existen elementos o no existe la posición / ");
             return null;
         }
-        
+
     }
-    
+
     //cambiarElemento(int, Objeto nuevo): cambia el objeto de la posición 
     //indicada por objeto nuevo proporcionado como parámetro.
-    public void cambiarElemento(int posicion, Motos nuevoObjeto){
+    public void cambiarElemento(int posicion, Motos nuevoObjeto) {
         try {
             listaMotos.set(posicion, nuevoObjeto);
-        } catch (IndexOutOfBoundsException a){
+        } catch (IndexOutOfBoundsException a) {
             System.out.println("No existe la posicón indicada");
         }
     }
-    
-    
+
+    //guardarElemento(Objeto c): agrega al final de la lista el nuevo elemento
+    public void guardarElemento(Motos motoAGuardar) {
+        listaMotos.add(motoAGuardar);
+    }
 }
