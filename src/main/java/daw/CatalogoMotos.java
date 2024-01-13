@@ -5,6 +5,7 @@
 package daw;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 /**
@@ -111,4 +112,11 @@ public class CatalogoMotos {
     public void eliminaElemento(Motos objetoAEliminar){
         listaMotos.remove(objetoAEliminar);
     }
+    
+    //eliminarElementos(Lista elementos a borrar), que recibe la lista de 
+    //objetos a borrar del catálogo original
+    public void eliminarElemento(ArrayList<Motos> listaElementosABorrar){
+        listaMotos.removeAll(listaElementosABorrar);
+    }
+
 }
