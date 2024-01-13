@@ -124,10 +124,19 @@ public class CatalogoMotos {
         Iterator<Motos> it = listaMotos.iterator();
         
         while(it.hasNext()){
-            Motos elementoActual = it.next();
+            it.next();
             if (!listaMotos.isEmpty()){
                 it.remove();
             }
         }
+    }
+    
+    //imprimirCatalogo (). Imprime los objetos contenidos en el catálogo
+    public void imprimitCatalogo(){
+//        for (Motos aux : listaMotos){
+//            System.out.println(aux);
+//        }
+        
+        listaMotos.forEach(System.out::println);
     }
 }
