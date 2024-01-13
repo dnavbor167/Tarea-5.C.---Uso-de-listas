@@ -118,5 +118,16 @@ public class CatalogoMotos {
     public void eliminarElemento(ArrayList<Motos> listaElementosABorrar){
         listaMotos.removeAll(listaElementosABorrar);
     }
-
+    
+    //eliminarTodos(), borra todos los objetos.
+    public void eliminarTodos(){
+        Iterator<Motos> it = listaMotos.iterator();
+        
+        while(it.hasNext()){
+            Motos elementoActual = it.next();
+            if (!listaMotos.isEmpty()){
+                it.remove();
+            }
+        }
+    }
 }
