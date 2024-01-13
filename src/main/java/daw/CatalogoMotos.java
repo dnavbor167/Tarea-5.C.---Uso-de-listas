@@ -30,4 +30,9 @@ public class CatalogoMotos {
     public boolean estaVacio(){
         return listaMotos.isEmpty();
     }
+    
+    //verElemento(int): devuelve el objeto que se encuentra en la posición indicada.
+    public Motos verElemento(int posicion){
+        return listaMotos.get(posicion);
+    }
 }
