@@ -139,4 +139,10 @@ public class CatalogoMotos {
         
         listaMotos.forEach(System.out::println);
     }
+    
+    //buscarElemento(Objeto c), busca el objeto c en la lista  y devuelve la 
+    //posición en la que se encuentra. Usa el método indexOf. No usar búsqueda binaria.
+    public void buscarElemento(Motos elementoABuscar){
+        listaMotos.indexOf(elementoABuscar);
+    }
 }
