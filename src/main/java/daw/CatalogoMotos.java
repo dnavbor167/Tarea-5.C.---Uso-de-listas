@@ -143,7 +143,7 @@ public class CatalogoMotos {
     
     //buscarElemento(Objeto c), busca el objeto c en la lista  y devuelve la 
     //posición en la que se encuentra. Usa el método indexOf. No usar búsqueda binaria.
-    public void buscarElemento(Motos elementoABuscar){
+    public void buscarElementoIndexOf(Motos elementoABuscar){
         listaMotos.indexOf(elementoABuscar);
     }
     
@@ -160,5 +160,16 @@ public class CatalogoMotos {
     public void ordenarPorNumeroRuedas(){
         Collections.sort(listaMotos, 
                 (e1,e2)->Integer.compare(e1.getNumRuedas(), e2.getNumRuedas()));
+    }
+    
+    //buscarElemento(Objeto c), usando búsqueda binaria sobre la lista 
+    //ordenada. Devuelve la posición
+    public int buscarElementoBinarySearch(Motos elementoABuscar){
+        //La lista ha de estar ordenada primero, por lo que en el main
+        //hay que ejecutar primero el método de ordención
+        elementoABuscar.setMatricula("1234 asd");
+        return Collections.binarySearch(listaMotos, 
+                elementoABuscar, 
+                (e1,e2)->e1.getMatricula().compareToIgnoreCase(e2.getMatricula()));
     }
 }
