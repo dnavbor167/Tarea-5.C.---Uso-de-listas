@@ -5,6 +5,7 @@
 package daw;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -38,6 +39,31 @@ public class CatalogoMotos {
         sb.append('}');
         return sb.toString();
     }
+    
+    //Creación de hashcode
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + Objects.hashCode(this.listaMotos);
+        return hash;
+    }
+
+    //Creación de equals
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CatalogoMotos other = (CatalogoMotos) obj;
+        return Objects.equals(this.listaMotos, other.listaMotos);
+    }
+    
     
     
     
