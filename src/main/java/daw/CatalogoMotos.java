@@ -18,4 +18,11 @@ public class CatalogoMotos {
     public CatalogoMotos(){
         this.listaMotos = new ArrayList<>();
     }
+    
+    //Creación de Métodos
+    
+    //numeroElementos(): devuelve el número de objetos que hay en la lista.
+    public int numeroElementos(){
+        return listaMotos.size();
+    }
 }
