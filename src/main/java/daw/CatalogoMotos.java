@@ -178,6 +178,7 @@ public class CatalogoMotos {
             return listaMotos.get(posicion);
         } catch (IndexOutOfBoundsException a) {
             System.out.print("No existen elementos o no existe la posición / ");
+            //Es preferible devolver un producto por defecto a devolver null
             return null;
         }
 
@@ -225,6 +226,9 @@ public class CatalogoMotos {
                 it.remove();
             }
         }
+        
+        //Puedes usar tambien el siguiente método:
+        //listaMotos.clear();
     }
     
     //imprimirCatalogo (). Imprime los objetos contenidos en el catálogo
@@ -260,8 +264,8 @@ public class CatalogoMotos {
     //buscarElemento(Objeto c), usando búsqueda binaria sobre la lista 
     //ordenada. Devuelve la posición
     public int buscarElementoBinarySearch(Motos elementoABuscar){
-        //La lista ha de estar ordenada primero, por lo que en el main
-        //hay que ejecutar primero el método de ordención
+        //La lista ha de estar ordenada primero
+        ordenarPorMatricula();
         elementoABuscar.setMatricula("1234 asd");
         return Collections.binarySearch(listaMotos, 
                 elementoABuscar, 
